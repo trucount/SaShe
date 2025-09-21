@@ -7,9 +7,9 @@ import { Review } from "@/types/review.types";
 export const newArrivalsData: Product[] = [
   {
     id: 1,
-    title: "T-shirt with Tape Details",
+    title: "Framed Acrylic Portrait",
     srcUrl: "/images/ChatGPT Image Sep 21, 2025, 12_26_28 PM.png",
-    gallery: ["/images/ChatGPT Image Sep 21, 2025, 12_26_28 PM.png", "/images/pic10.png", "/images/pic11.png"],
+    gallery: ["/images/ChatGPT Image Sep 21, 2025, 12_26_28 PM.png"],
     price: 120,
     discount: {
       amount: 0,
@@ -19,9 +19,9 @@ export const newArrivalsData: Product[] = [
   },
   {
     id: 2,
-    title: "Skinny Fit Jeans",
-    srcUrl: "/images/pic2.png",
-    gallery: ["/images/pic2.png"],
+    title: "Red Bull Racing RB20 Painting",
+    srcUrl: "/images/ChatGPT Image Sep 21, 2025, 12_30_32 PM.png",
+    gallery: ["/images/ChatGPT Image Sep 21, 2025, 12_30_32 PM.png"],
     price: 260,
     discount: {
       amount: 0,

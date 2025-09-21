@@ -43,8 +43,8 @@ const Footer = () => {
       </div>
       <div className="pt-8 md:pt-[50px] bg-[#F0F0F0] px-4 pb-4">
         <div className="max-w-frame mx-auto">
-          <nav className="lg:grid lg:grid-cols-12 mb-8">
-            <div className="flex flex-col lg:col-span-3 lg:max-w-[248px]">
+          <nav className="mb-8">
+            <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-8">
               <h1
                 className={cn([
                   satoshi.className,
@@ -68,7 +68,7 @@ const Footer = () => {
                 ))}
               </div>
             </div>
-            <div className="hidden lg:grid col-span-9 lg:grid-cols-4 lg:pl-10">
+            <div className="hidden lg:grid grid-cols-4 gap-8">
               <LinksSection />
             </div>
             <div className="grid lg:hidden grid-cols-2 sm:grid-cols-4">
@@ -77,8 +77,8 @@ const Footer = () => {
           </nav>
 
           <hr className="h-[1px] border-t-black/10 mb-6" />
-          <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center mb-2">
-            <p className="text-sm text-center sm:text-left text-black/60 mb-4 sm:mb-0 sm:mr-1">
+          <div className="text-center">
+            <p className="text-sm text-black/60">
               Sa-Shé © Made by{" "}
               <Link
                 href="https://www.instagram.com/idk_satvik.s/"

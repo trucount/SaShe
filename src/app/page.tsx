@@ -31,9 +31,9 @@ export const newArrivalsData: Product[] = [
   },
   {
     id: 3,
-    title: "Chechered Shirt",
-    srcUrl: "/images/pic3.png",
-    gallery: ["/images/pic3.png"],
+    title: "Marble Luxe Roman Wall Clock",
+    srcUrl: "/images/ChatGPT Image Sep 21, 2025, 12_39_50 PM.png",
+    gallery: ["/images/ChatGPT Image Sep 21, 2025, 12_39_50 PM.png"],
     price: 180,
     discount: {
       amount: 0,

@@ -8,8 +8,8 @@ export const newArrivalsData: Product[] = [
   {
     id: 1,
     title: "T-shirt with Tape Details",
-    srcUrl: "/images/pic1.png",
-    gallery: ["/images/pic1.png", "/images/pic10.png", "/images/pic11.png"],
+    srcUrl: "/images/ChatGPT Image Sep 21, 2025, 12_26_28 PM.png",
+    gallery: ["/images/ChatGPT Image Sep 21, 2025, 12_26_28 PM.png", "/images/pic10.png", "/images/pic11.png"],
     price: 120,
     discount: {
       amount: 0,

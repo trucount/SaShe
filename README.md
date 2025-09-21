@@ -1,12 +1,12 @@
-[![Shopco Screenshot](https://github.com/mohammadoftadeh/repo-assets/blob/main/shopco-cover.png?raw=true)](https://next-ecommerce-shopco.vercel.app/)
+[![Sa-Shé Screenshot](https://github.com/mohammadoftadeh/repo-assets/blob/main/shopco-cover.png?raw=true)](https://next-ecommerce-shopco.vercel.app/)
 
-# Shopco
+# Sa-Shé
 
-Shopco is an open-source project that converts a Figma design of an e-commerce website into a fully responsive front-end application. It utilizes **Next.js 14 App Router**, **TypeScript**, **Tailwind CSS**, **Redux**, **Framer Motion**, and **ShadCN UI** to deliver a modern, scalable, and optimized solution based on industry standards.
+Sa-Shé is an open-source project that converts a Figma design of an e-commerce website into a fully responsive front-end application. It utilizes **Next.js 14 App Router**, **TypeScript**, **Tailwind CSS**, **Redux**, **Framer Motion**, and **ShadCN UI** to deliver a modern, scalable, and optimized solution based on industry standards.
 
 ## Table of Contents
 
-- [Shopco](#shopco)
+- [Sa-Shé](#sa-shé)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
   - [Demo](#demo)
@@ -22,13 +22,13 @@ Shopco is an open-source project that converts a Figma design of an e-commerce w
 
 ## Overview
 
-Shopco bridges the gap between design and development by converting Figma designs into production-ready code. The project follows best practices for **SEO**, **performance optimization**, and **accessibility**, making it a perfect foundation for developers looking to create scalable and maintainable e-commerce front-ends.
+Sa-Shé bridges the gap between design and development by converting Figma designs into production-ready code. The project follows best practices for **SEO**, **performance optimization**, and **accessibility**, making it a perfect foundation for developers looking to create scalable and maintainable e-commerce front-ends.
 
 ## Demo
 
-Check out the live demo: [Shopco Demo](https://next-ecommerce-shopco.vercel.app/)
+Check out the live demo: [Sa-Shé Demo](https://next-ecommerce-shopco.vercel.app/)
 
-<!-- [![Shopco Screenshot](https://github.com/mohammadoftadeh/repo-assets/blob/main/shopco-cover.png?raw=true)](https://next-ecommerce-shopco.vercel.app/) -->
+<!-- [![Sa-Shé Screenshot](https://github.com/mohammadoftadeh/repo-assets/blob/main/shopco-cover.png?raw=true)](https://next-ecommerce-shopco.vercel.app/) -->
 
 ## Features
 
@@ -54,7 +54,7 @@ Check out the live demo: [Shopco Demo](https://next-ecommerce-shopco.vercel.app/
 
 ## Installation
 
-To get started with Shopco locally, follow these steps:
+To get started with Sa-Shé locally, follow these steps:
 
 1. **Clone the repository:**
 
@@ -96,7 +96,7 @@ To get started with Shopco locally, follow these steps:
 ## Project Structure
 
 ```bash
-Shopco/
+Sa-Shé/
 │
 ├── public/                # Static assets
 ├── src/
@@ -121,7 +121,7 @@ Shopco/
 
 ## Contributing
 
-Contributions are welcome! If you'd like to contribute, Please follow these steps to contribute to Shopco:
+Contributions are welcome! If you'd like to contribute, Please follow these steps to contribute to Sa-Shé:
 
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature/your-feature-name`).

@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { satoshi } from "@/styles/fonts";
 import React from "react";
-import { PaymentBadge, SocialNetworks } from "./footer.types";
+import { SocialNetworks } from "./footer.types";
 import { FaFacebookF, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
 import Link from "next/link";
 import LinksSection from "./LinksSection";
@@ -32,29 +32,6 @@ const socialsData: SocialNetworks[] = [
   },
 ];
 
-const paymentBadgesData: PaymentBadge[] = [
-  {
-    id: 1,
-    srcUrl: "/icons/Visa.svg",
-  },
-  {
-    id: 2,
-    srcUrl: "/icons/mastercard.svg",
-  },
-  {
-    id: 3,
-    srcUrl: "/icons/paypal.svg",
-  },
-  {
-    id: 4,
-    srcUrl: "/icons/applePay.svg",
-  },
-  {
-    id: 5,
-    srcUrl: "/icons/googlePay.svg",
-  },
-];
-
 const Footer = () => {
   return (
     <footer className="mt-10">
@@ -77,8 +54,7 @@ const Footer = () => {
                 Sa-Shé
               </h1>
               <p className="text-black/60 text-sm mb-9">
-                We have clothes that suits your style and which you’re proud to
-                wear. From women to men.
+                At Sa-She, we create accessories that reflect your personality and style — pieces you’ll be proud to own and carry every day. From elegant jewellery that adds a touch of charm to your look, to stylish keychains that travel with you wherever you go, each design is crafted to make you feel special. Whether you’re dressing up for an occasion or keeping it casual, Sa-She has something that complements who you are, making every moment shine a little brighter.
               </p>
               <div className="flex items-center">
                 {socialsData.map((social) => (
@@ -105,40 +81,19 @@ const Footer = () => {
             <p className="text-sm text-center sm:text-left text-black/60 mb-4 sm:mb-0 sm:mr-1">
               Sa-Shé © Made by{" "}
               <Link
-                href="https://github.com/mohammadoftadeh"
+                href="https://www.instagram.com/idk_satvik.s/"
                 className="text-black font-medium"
               >
-                Mohammad Oftadeh
+                Satvik Singh
               </Link>
               {", "}
               Designed by{" "}
-              <Link
-                href="https://www.figma.com/@hamzauix"
+              <span
                 className="text-black font-medium"
               >
-                Hamza Naeem
-              </Link>
+                Sparrow AI Solutions
+              </span>
             </p>
-            <div className="flex items-center">
-              {paymentBadgesData.map((badge, _, arr) => (
-                <span
-                  key={badge.id}
-                  className={cn([
-                    arr.length !== badge.id && "mr-3",
-                    "w-[46px] h-[30px] rounded-[5px] border-[#D6DCE5] bg-white flex items-center justify-center",
-                  ])}
-                >
-                  <Image
-                    priority
-                    src={badge.srcUrl}
-                    width={33}
-                    height={100}
-                    alt="user"
-                    className="max-h-[15px]"
-                  />
-                </span>
-              ))}
-            </div>
           </div>
         </div>
         <LayoutSpacing />

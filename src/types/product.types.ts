@@ -3,6 +3,11 @@ export type Discount = {
   percentage: number;
 };
 
+export type SpecItem = {
+  label: string;
+  value: string;
+};
+
 export type Product = {
   id: number;
   title: string;
@@ -12,4 +17,5 @@ export type Product = {
   price: number;
   discount: Discount;
   rating: number;
+  specifications: SpecItem[];
 };

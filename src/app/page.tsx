@@ -17,6 +17,12 @@ export const newArrivalsData: Product[] = [
       percentage: 0,
     },
     rating: 4.5,
+    specifications: [
+      { label: "Material composition", value: "100% Acrylic" },
+      { label: "Care instructions", value: "Wipe with a soft cloth" },
+      { label: "Fit type", value: "N/A" },
+      { label: "Pattern", value: "Portrait" },
+    ],
   },
   {
     id: 2,
@@ -30,6 +36,12 @@ export const newArrivalsData: Product[] = [
       percentage: 20,
     },
     rating: 3.5,
+    specifications: [
+      { label: "Material composition", value: "Canvas" },
+      { label: "Care instructions", value: "Handle with care" },
+      { label: "Fit type", value: "N/A" },
+      { label: "Pattern", value: "Racing Car" },
+    ],
   },
   {
     id: 3,
@@ -43,6 +55,12 @@ export const newArrivalsData: Product[] = [
       percentage: 0,
     },
     rating: 4.5,
+    specifications: [
+      { label: "Material composition", value: "Marble, Metal" },
+      { label: "Care instructions", value: "Wipe clean" },
+      { label: "Fit type", value: "N/A" },
+      { label: "Pattern", value: "Roman Numerals" },
+    ],
   },
   {
     id: 4,
@@ -56,6 +74,12 @@ export const newArrivalsData: Product[] = [
       percentage: 30,
     },
     rating: 4.5,
+    specifications: [
+      { label: "Material composition", value: "Resin, Dried Flowers" },
+      { label: "Care instructions", value: "Keep away from direct sunlight" },
+      { label: "Fit type", value: "N/A" },
+      { label: "Pattern", value: "Floral" },
+    ],
   },
 ];
 
@@ -72,6 +96,12 @@ export const topSellingData: Product[] = [
       percentage: 20,
     },
     rating: 5.0,
+    specifications: [
+      { label: "Material composition", value: "100% Cotton" },
+      { label: "Care instructions", value: "Machine wash cold" },
+      { label: "Fit type", value: "Classic Fit" },
+      { label: "Pattern", value: "Floral" },
+    ],
   },
   {
     id: 6,
@@ -85,6 +115,12 @@ export const topSellingData: Product[] = [
       percentage: 0,
     },
     rating: 4.0,
+    specifications: [
+      { label: "Material composition", value: "100% Cotton" },
+      { label: "Care instructions", value: "Machine wash warm, tumble dry" },
+      { label: "Fit type", value: "Classic Fit" },
+      { label: "Pattern", value: "Graphic" },
+    ],
   },
   {
     id: 7,
@@ -98,6 +134,12 @@ export const topSellingData: Product[] = [
       percentage: 0,
     },
     rating: 3.0,
+    specifications: [
+      { label: "Material composition", value: "Resin" },
+      { label: "Care instructions", value: "Hand wash only" },
+      { label: "Fit type", value: "N/A" },
+      { label: "Pattern", value: "Abstract" },
+    ],
   },
   {
     id: 8,
@@ -111,6 +153,12 @@ export const topSellingData: Product[] = [
       percentage: 0,
     },
     rating: 4.5,
+    specifications: [
+      { label: "Material composition", value: "Metal" },
+      { label: "Care instructions", value: "Polish with a soft cloth" },
+      { label: "Fit type", value: "N/A" },
+      { label: "Pattern", value: "Letter" },
+    ],
   },
 ];
 
@@ -127,6 +175,12 @@ export const relatedProductData: Product[] = [
       percentage: 20,
     },
     rating: 4.0,
+    specifications: [
+      { label: "Material composition", value: "100% Cotton" },
+      { label: "Care instructions", value: "Machine wash warm, tumble dry" },
+      { label: "Fit type", value: "Classic Fit" },
+      { label: "Pattern", value: "Solid" },
+    ],
   },
   {
     id: 13,
@@ -140,6 +194,12 @@ export const relatedProductData: Product[] = [
       percentage: 0,
     },
     rating: 3.5,
+    specifications: [
+      { label: "Material composition", value: "100% Cotton" },
+      { label: "Care instructions", value: "Machine wash warm, tumble dry" },
+      { label: "Fit type", value: "Classic Fit" },
+      { label: "Pattern", value: "Letter" },
+    ],
   },
   {
     id: 14,
@@ -153,6 +213,12 @@ export const relatedProductData: Product[] = [
       percentage: 0,
     },
     rating: 4.5,
+    specifications: [
+      { label: "Material composition", value: "Resin" },
+      { label: "Care instructions", value: "Handle with care" },
+      { label: "Fit type", value: "N/A" },
+      { label: "Pattern", value: "Diamond" },
+    ],
   },
   {
     id: 15,
@@ -166,6 +232,12 @@ export const relatedProductData: Product[] = [
       percentage: 30,
     },
     rating: 5.0,
+    specifications: [
+      { label: "Material composition", value: "Resin" },
+      { label: "Care instructions", value: "Avoid contact with harsh chemicals" },
+      { label: "Fit type", value: "N/A" },
+      { label: "Pattern", value: "Solid" },
+    ],
   },
 ];
 

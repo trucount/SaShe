@@ -8,6 +8,7 @@ export const newArrivalsData: Product[] = [
   {
     id: 1,
     title: "Framed Acrylic Portrait",
+    description: "This is a beautiful framed acrylic portrait.",
     srcUrl: "/images/ChatGPT Image Sep 21, 2025, 12_26_28 PM.png",
     gallery: ["/images/ChatGPT Image Sep 21, 2025, 12_26_28 PM.png"],
     price: 120,
@@ -20,6 +21,7 @@ export const newArrivalsData: Product[] = [
   {
     id: 2,
     title: "Red Bull Racing RB20 Painting",
+    description: "A stunning painting of the Red Bull Racing RB20.",
     srcUrl: "/images/ChatGPT Image Sep 21, 2025, 12_30_32 PM.png",
     gallery: ["/images/ChatGPT Image Sep 21, 2025, 12_30_32 PM.png"],
     price: 260,
@@ -32,6 +34,7 @@ export const newArrivalsData: Product[] = [
   {
     id: 3,
     title: "Marble Luxe Roman Wall Clock",
+    description: "An elegant Marble Luxe Roman wall clock.",
     srcUrl: "/images/IMG-20250916-WA0001.jpg",
     gallery: ["/images/IMG-20250916-WA0001.jpg"],
     price: 180,
@@ -44,6 +47,7 @@ export const newArrivalsData: Product[] = [
   {
     id: 4,
     title: "Flower Resine Art",
+    description: "Creative and colorful flower resin art.",
     srcUrl: "/images/IMG-20250921-WA0019.jpg",
     gallery: ["/images/IMG-20250921-WA0019.jpg"],
     price: 160,
@@ -59,6 +63,7 @@ export const topSellingData: Product[] = [
   {
     id: 5,
     title: "Petals and Flowers",
+    description: "Beautiful petals and flowers design.",
     srcUrl: "/images/IMG-20250921-WA0020.jpg",
     gallery: ["/images/IMG-20250921-WA0020.jpg"],
     price: 232,
@@ -71,6 +76,7 @@ export const topSellingData: Product[] = [
   {
     id: 6,
     title: "Courage Graphic",
+    description: "A graphic with a message of courage.",
     srcUrl: "/images/IMG-20250921-WA0018.jpg",
     gallery: ["/images/IMG-20250921-WA0018.jpg"],
     price: 145,
@@ -83,6 +89,7 @@ export const topSellingData: Product[] = [
   {
     id: 7,
     title: "Resine Plate",
+    description: "A unique and stylish resin plate.",
     srcUrl: "/images/IMG-20250921-WA0017.jpg",
     gallery: ["/images/IMG-20250921-WA0017.jpg"],
     price: 80,
@@ -95,6 +102,7 @@ export const topSellingData: Product[] = [
   {
     id: 8,
     title: "Golden N",
+    description: "A golden 'N' for a touch of class.",
     srcUrl: "/images/IMG-20250921-WA0016.jpg",
     gallery: ["/images/IMG-20250921-WA0016.jpg"],
     price: 210,
@@ -110,6 +118,7 @@ export const relatedProductData: Product[] = [
   {
     id: 12,
     title: "Green T",
+    description: "A vibrant green 'T' design.",
     srcUrl: "/images/IMG-20250921-WA0015.jpg",
     gallery: ["/images/IMG-20250921-WA0015.jpg"],
     price: 242,
@@ -122,6 +131,7 @@ export const relatedProductData: Product[] = [
   {
     id: 13,
     title: "Sunny R",
+    description: "A sunny 'R' to brighten your day.",
     srcUrl: "/images/IMG-20250921-WA0014.jpg",
     gallery: ["/images/IMG-20250921-WA0014.jpg"],
     price: 145,
@@ -134,6 +144,7 @@ export const relatedProductData: Product[] = [
   {
     id: 14,
     title: "Resine Dimond",
+    description: "A sparkling resin diamond.",
     srcUrl: "/images/IMG-20250921-WA0006.jpg",
     gallery: ["/images/IMG-20250921-WA0006.jpg"],
     price: 180,
@@ -146,6 +157,7 @@ export const relatedProductData: Product[] = [
   {
     id: 15,
     title: "Resine Bnagles",
+    description: "Hand-crafted resin bangles.",
     srcUrl: "/images/IMG-20250921-WA0008.jpg",
     gallery: ["/images/IMG-20250921-WA0008.jpg"],
     price: 150,

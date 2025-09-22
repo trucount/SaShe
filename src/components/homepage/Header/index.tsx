@@ -58,7 +58,7 @@ const Header = () => {
                 <AnimatedCounter from={0} to={200} />+
               </span>
               <span className="text-xs xl:text-base text-black/60 text-nowrap">
-                International Brands
+                Coustomer Reviews
               </span>
             </div>
             <Separator

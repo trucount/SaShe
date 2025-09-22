@@ -51,10 +51,10 @@ const Footer = () => {
                   "font-bold whitespace-nowrap text-[28px] lg:text-[32px] mb-6",
                 ])}
               >
-                Sa-Shé
+                SaShé
               </h1>
               <p className="text-black/60 text-sm mb-9">
-                At Sa-She, we create accessories that reflect your personality and style — pieces you’ll be proud to own and carry every day. From elegant jewellery that adds a touch of charm to your look, to stylish keychains that travel with you wherever you go, each design is crafted to make you feel special. Whether you’re dressing up for an occasion or keeping it casual, Sa-She has something that complements who you are, making every moment shine a little brighter.
+                At SaShé, we create accessories that reflect your personality and style — pieces you’ll be proud to own and carry every day. From elegant jewellery that adds a touch of charm to your look, to stylish keychains that travel with you wherever you go, each design is crafted to make you feel special. Whether you’re dressing up for an occasion or keeping it casual, SaShé has something that complements who you are, making every moment shine a little brighter.
               </p>
               <div className="flex items-center">
                 {socialsData.map((social) => (
@@ -79,7 +79,7 @@ const Footer = () => {
           <hr className="h-[1px] border-t-black/10 mb-6" />
           <div className="text-center">
             <p className="text-sm text-black/60">
-              Sa-Shé © Made by{" "}
+              SaShé © Made by{" "}
               <Link
                 href="https://www.instagram.com/idk_satvik.s/"
                 className="text-black font-medium"

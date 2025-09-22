@@ -32,8 +32,8 @@ export const newArrivalsData: Product[] = [
   {
     id: 3,
     title: "Marble Luxe Roman Wall Clock",
-    srcUrl: "/images/ChatGPT Image Sep 21, 2025, 12_39_50 PM.png",
-    gallery: ["/images/ChatGPT Image Sep 21, 2025, 12_39_50 PM.png"],
+    srcUrl: "/images/IMG-20250916-WA0001.jpg",
+    gallery: ["/images/IMG-20250916-WA0001.jpg"],
     price: 180,
     discount: {
       amount: 0,
@@ -43,9 +43,9 @@ export const newArrivalsData: Product[] = [
   },
   {
     id: 4,
-    title: "Sleeve Striped T-shirt",
-    srcUrl: "/images/pic4.png",
-    gallery: ["/images/pic4.png", "/images/pic10.png", "/images/pic11.png"],
+    title: "Flower Resine Art",
+    srcUrl: "/images/IMG-20250921-WA0019.jpg",
+    gallery: ["/images/IMG-20250921-WA0019.jpg"],
     price: 160,
     discount: {
       amount: 0,
@@ -58,9 +58,9 @@ export const newArrivalsData: Product[] = [
 export const topSellingData: Product[] = [
   {
     id: 5,
-    title: "Vertical Striped Shirt",
-    srcUrl: "/images/pic5.png",
-    gallery: ["/images/pic5.png", "/images/pic10.png", "/images/pic11.png"],
+    title: "Petals and Flowers",
+    srcUrl: "/images/IMG-20250921-WA0020.jpg",
+    gallery: ["/images/IMG-20250921-WA0020.jpg"],
     price: 232,
     discount: {
       amount: 0,
@@ -70,9 +70,9 @@ export const topSellingData: Product[] = [
   },
   {
     id: 6,
-    title: "Courage Graphic T-shirt",
-    srcUrl: "/images/pic6.png",
-    gallery: ["/images/pic6.png", "/images/pic10.png", "/images/pic11.png"],
+    title: "Courage Graphic",
+    srcUrl: "/images/IMG-20250921-WA0018.jpg",
+    gallery: ["/images/IMG-20250921-WA0018.jpg"],
     price: 145,
     discount: {
       amount: 0,
@@ -82,9 +82,9 @@ export const topSellingData: Product[] = [
   },
   {
     id: 7,
-    title: "Loose Fit Bermuda Shorts",
-    srcUrl: "/images/pic7.png",
-    gallery: ["/images/pic7.png"],
+    title: "Resine Plate",
+    srcUrl: "/images/IMG-20250921-WA0017.jpg",
+    gallery: ["/images/IMG-20250921-WA0017.jpg"],
     price: 80,
     discount: {
       amount: 0,
@@ -94,9 +94,9 @@ export const topSellingData: Product[] = [
   },
   {
     id: 8,
-    title: "Faded Skinny Jeans",
-    srcUrl: "/images/pic8.png",
-    gallery: ["/images/pic8.png"],
+    title: "Golden N",
+    srcUrl: "/images/IMG-20250921-WA0016.jpg",
+    gallery: ["/images/IMG-20250921-WA0016.jpg"],
     price: 210,
     discount: {
       amount: 0,
@@ -109,9 +109,9 @@ export const topSellingData: Product[] = [
 export const relatedProductData: Product[] = [
   {
     id: 12,
-    title: "Polo with Contrast Trims",
-    srcUrl: "/images/pic12.png",
-    gallery: ["/images/pic12.png", "/images/pic10.png", "/images/pic11.png"],
+    title: "Green T",
+    srcUrl: "/images/IMG-20250921-WA0015.jpg",
+    gallery: ["/images/IMG-20250921-WA0015.jpg"],
     price: 242,
     discount: {
       amount: 0,
@@ -121,9 +121,9 @@ export const relatedProductData: Product[] = [
   },
   {
     id: 13,
-    title: "Gradient Graphic T-shirt",
-    srcUrl: "/images/pic13.png",
-    gallery: ["/images/pic13.png", "/images/pic10.png", "/images/pic11.png"],
+    title: "Sunny R",
+    srcUrl: "/images/IMG-20250921-WA0014.jpg",
+    gallery: ["/images/IMG-20250921-WA0014.jpg"],
     price: 145,
     discount: {
       amount: 0,
@@ -133,9 +133,9 @@ export const relatedProductData: Product[] = [
   },
   {
     id: 14,
-    title: "Polo with Tipping Details",
-    srcUrl: "/images/pic14.png",
-    gallery: ["/images/pic14.png"],
+    title: "Resine Dimond",
+    srcUrl: "/images/IMG-20250921-WA0006.jpg",
+    gallery: ["/images/IMG-20250921-WA0006.jpg"],
     price: 180,
     discount: {
       amount: 0,
@@ -145,9 +145,9 @@ export const relatedProductData: Product[] = [
   },
   {
     id: 15,
-    title: "Black Striped T-shirt",
-    srcUrl: "/images/pic15.png",
-    gallery: ["/images/pic15.png"],
+    title: "Resine Bnagles",
+    srcUrl: "/images/IMG-20250921-WA0008.jpg",
+    gallery: ["/images/IMG-20250921-WA0008.jpg"],
     price: 150,
     discount: {
       amount: 0,
@@ -162,14 +162,14 @@ export const reviewsData: Review[] = [
     id: 1,
     user: "Alex K.",
     content:
-      '"Finding clothes that align with my personal style used to be a challenge until I discovered Sa-Shé. The range of options they offer is truly remarkable, catering to a variety of tastes and occasions.”',
+      '"Finding clothes that align with my personal style used to be a challenge until I discovered SaShé. The range of options they offer is truly remarkable, catering to a variety of tastes and occasions.”',
     rating: 5,
     date: "August 14, 2023",
   },
   {
     id: 2,
     user: "Sarah M.",
-    content: `"I'm blown away by the quality and style of the clothes I received from Sa-Shé. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.”`,
+    content: `"I'm blown away by the quality and style of the clothes I received from SaShé. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.”`,
     rating: 5,
     date: "August 15, 2023",
   },

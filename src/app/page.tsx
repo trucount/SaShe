@@ -1,245 +1,11 @@
+"use client";
+
 import ProductListSec from "@/components/common/ProductListSec";
 import Header from "@/components/homepage/Header";
 import Reviews from "@/components/homepage/Reviews";
 import { Product } from "@/types/product.types";
 import { Review } from "@/types/review.types";
-
-export const newArrivalsData: Product[] = [
-  {
-    id: 1,
-    title: "Framed Acrylic Portrait",
-    description: "This is a beautiful framed acrylic portrait.",
-    srcUrl: "/images/ChatGPT Image Sep 21, 2025, 12_26_28 PM.png",
-    gallery: ["/images/ChatGPT Image Sep 21, 2025, 12_26_28 PM.png"],
-    price: 4999,
-    discount: {
-      amount: 0,
-      percentage: 0,
-    },
-    rating: 4.5,
-    specifications: [
-      { label: "Material composition", value: "100% Acrylic" },
-      { label: "Care instructions", value: "Wipe with a soft cloth" },
-      { label: "Fit type", value: "N/A" },
-      { label: "Pattern", value: "Portrait" },
-    ],
-  },
-  {
-    id: 2,
-    title: "Red Bull Racing RB20 Painting",
-    description: "A stunning painting of the Red Bull Racing RB20.",
-    srcUrl: "/images/ChatGPT Image Sep 21, 2025, 12_30_32 PM.png",
-    gallery: ["/images/ChatGPT Image Sep 21, 2025, 12_30_32 PM.png"],
-    price: 8000,
-    discount: {
-      amount: 0,
-      percentage: 10,
-    },
-    rating: 3.5,
-    specifications: [
-      { label: "Material composition", value: "Canvas" },
-      { label: "Care instructions", value: "Handle with care" },
-      { label: "Fit type", value: "N/A" },
-      { label: "Pattern", value: "Racing Car" },
-    ],
-  },
-  {
-    id: 3,
-    title: "Marble Luxe Roman Wall Clock",
-    description: "An elegant Marble Luxe Roman wall clock.",
-    srcUrl: "/images/40988d60-b765-4442-a41f-4d831a1f7de6.png",
-    gallery: ["/images/40988d60-b765-4442-a41f-4d831a1f7de6.png"],
-    price: 10000,
-    discount: {
-      amount: 0,
-      percentage: 10,
-    },
-    rating: 4.5,
-    specifications: [
-      { label: "Material composition", value: "Resine, Metal" },
-      { label: "Care instructions", value: "Wipe clean" },
-      { label: "Fit type", value: "N/A" },
-      { label: "Pattern", value: "Roman Numerals" },
-    ],
-  },
-  {
-    id: 4,
-    title: "Frosty Flower Keychain ",
-    description: "Creative and colorful flower resin art.",
-    srcUrl: "/images/IMG-20251008-WA0000.jpg",
-    gallery: ["/images/IMG-20251008-WA0000.jpg"],
-    price: 500,
-    discount: {
-      amount: 0,
-      percentage: 15,
-    },
-    rating: 4.5,
-    specifications: [
-      { label: "Material composition", value: "Resin, Dried Flowers" },
-      { label: "Care instructions", value: "Keep away from direct sunlight" },
-      { label: "Fit type", value: "N/A" },
-      { label: "Pattern", value: "Floral" },
-    ],
-  },
-];
-
-export const topSellingData: Product[] = [
-  {
-    id: 5,
-    title: "Petals and Flowers",
-    description: "Beautiful petals and flowers design.",
-    srcUrl: "/images/IMG-20250921-WA0020.jpg",
-    gallery: ["/images/IMG-20250921-WA0020.jpg"],
-    price: 232,
-    discount: {
-      amount: 0,
-      percentage: 20,
-    },
-    rating: 5.0,
-    specifications: [
-      { label: "Material composition", value: "100% Cotton" },
-      { label: "Care instructions", value: "Machine wash cold" },
-      { label: "Fit type", value: "Classic Fit" },
-      { label: "Pattern", value: "Floral" },
-    ],
-  },
-  {
-    id: 6,
-    title: "Courage Graphic",
-    description: "A graphic with a message of courage.",
-    srcUrl: "/images/IMG-20250921-WA0018.jpg",
-    gallery: ["/images/IMG-20250921-WA0018.jpg"],
-    price: 145,
-    discount: {
-      amount: 0,
-      percentage: 0,
-    },
-    rating: 4.0,
-    specifications: [
-      { label: "Material composition", value: "100% Cotton" },
-      { label: "Care instructions", value: "Machine wash warm, tumble dry" },
-      { label: "Fit type", value: "Classic Fit" },
-      { label: "Pattern", value: "Graphic" },
-    ],
-  },
-  {
-    id: 7,
-    title: "Resine Plate",
-    description: "A unique and stylish resin plate.",
-    srcUrl: "/images/IMG-20250921-WA0017.jpg",
-    gallery: ["/images/IMG-20250921-WA0017.jpg"],
-    price: 80,
-    discount: {
-      amount: 0,
-      percentage: 0,
-    },
-    rating: 3.0,
-    specifications: [
-      { label: "Material composition", value: "Resin" },
-      { label: "Care instructions", value: "Hand wash only" },
-      { label: "Fit type", value: "N/A" },
-      { label: "Pattern", value: "Abstract" },
-    ],
-  },
-  {
-    id: 8,
-    title: "Golden N",
-    description: "A golden 'N' for a touch of class.",
-    srcUrl: "/images/IMG-20250921-WA0016.jpg",
-    gallery: ["/images/IMG-20250921-WA0016.jpg"],
-    price: 210,
-    discount: {
-      amount: 0,
-      percentage: 0,
-    },
-    rating: 4.5,
-    specifications: [
-      { label: "Material composition", value: "Metal" },
-      { label: "Care instructions", value: "Polish with a soft cloth" },
-      { label: "Fit type", value: "N/A" },
-      { label: "Pattern", value: "Letter" },
-    ],
-  },
-];
-
-export const relatedProductData: Product[] = [
-  {
-    id: 12,
-    title: "Green T",
-    description: "A vibrant green 'T' design.",
-    srcUrl: "/images/IMG-20250921-WA0015.jpg",
-    gallery: ["/images/IMG-20250921-WA0015.jpg"],
-    price: 242,
-    discount: {
-      amount: 0,
-      percentage: 20,
-    },
-    rating: 4.0,
-    specifications: [
-      { label: "Material composition", value: "100% Cotton" },
-      { label: "Care instructions", value: "Machine wash warm, tumble dry" },
-      { label: "Fit type", value: "Classic Fit" },
-      { label: "Pattern", value: "Solid" },
-    ],
-  },
-  {
-    id: 13,
-    title: "Sunny R",
-    description: "A sunny 'R' to brighten your day.",
-    srcUrl: "/images/IMG-20250921-WA0014.jpg",
-    gallery: ["/images/IMG-20250921-WA0014.jpg"],
-    price: 145,
-    discount: {
-      amount: 0,
-      percentage: 0,
-    },
-    rating: 3.5,
-    specifications: [
-      { label: "Material composition", value: "100% Cotton" },
-      { label: "Care instructions", value: "Machine wash warm, tumble dry" },
-      { label: "Fit type", value: "Classic Fit" },
-      { label: "Pattern", value: "Letter" },
-    ],
-  },
-  {
-    id: 14,
-    title: "Resine Dimond",
-    description: "A sparkling resin diamond.",
-    srcUrl: "/images/IMG-20250921-WA0006.jpg",
-    gallery: ["/images/IMG-20250921-WA0006.jpg"],
-    price: 180,
-    discount: {
-      amount: 0,
-      percentage: 0,
-    },
-    rating: 4.5,
-    specifications: [
-      { label: "Material composition", value: "Resin" },
-      { label: "Care instructions", value: "Handle with care" },
-      { label: "Fit type", value: "N/A" },
-      { label: "Pattern", value: "Diamond" },
-    ],
-  },
-  {
-    id: 15,
-    title: "Resine Bnagles",
-    description: "Hand-crafted resin bangles.",
-    srcUrl: "/images/IMG-20250921-WA0008.jpg",
-    gallery: ["/images/IMG-20250921-WA0008.jpg"],
-    price: 150,
-    discount: {
-      amount: 0,
-      percentage: 30,
-    },
-    rating: 5.0,
-    specifications: [
-      { label: "Material composition", value: "Resin" },
-      { label: "Care instructions", value: "Avoid contact with harsh chemicals" },
-      { label: "Fit type", value: "N/A" },
-      { label: "Pattern", value: "Solid" },
-    ],
-  },
-];
+import { useEffect, useState } from "react";
 
 export const reviewsData: Review[] = [
   {
@@ -288,6 +54,26 @@ export const reviewsData: Review[] = [
 ];
 
 export default function Home() {
+  const [newArrivalsData, setNewArrivalsData] = useState<Product[]>([]);
+  const [topSellingData, setTopSellingData] = useState<Product[]>([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch('/api/products');
+        if (response.ok) {
+          const data = await response.json();
+          setNewArrivalsData(data.products.slice(0, 4));
+          setTopSellingData(data.products.slice(4, 8));
+        }
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
   return (
     <>
       <Header />

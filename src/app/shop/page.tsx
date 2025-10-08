@@ -1,8 +1,29 @@
+'use client';
+
 import BreadcrumbShop from "@/components/shop-page/BreadcrumbShop";
-import { newArrivalsData, relatedProductData, topSellingData } from "../page";
 import ProductCard from "@/components/common/ProductCard";
+import { useEffect, useState } from "react";
+import { Product } from "@/types/product.types";
 
 export default function ShopPage() {
+  const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch('/api/products');
+        if (response.ok) {
+          const data = await response.json();
+          setProducts(data.products);
+        }
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
   return (
     <main className="pb-20">
       <div className="max-w-frame mx-auto px-4 xl:px-0">
@@ -21,11 +42,7 @@ export default function ShopPage() {
               </div>
             </div>
             <div className="w-full grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-5">
-              {[
-                ...relatedProductData,
-                ...newArrivalsData,
-                ...topSellingData,
-              ].map((product) => (
+              {products.map((product) => (
                 <ProductCard key={product.id} data={product} />
               ))}
             </div>

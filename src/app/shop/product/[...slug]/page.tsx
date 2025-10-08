@@ -1,32 +1,47 @@
-import {
-  newArrivalsData,
-  relatedProductData,
-  topSellingData,
-} from "@/app/page";
+'use client';
+
 import ProductListSec from "@/components/common/ProductListSec";
 import BreadcrumbProduct from "@/components/product-page/BreadcrumbProduct";
 import Header from "@/components/product-page/Header";
 import Tabs from "@/components/product-page/Tabs";
 import { Product } from "@/types/product.types";
 import { notFound } from "next/navigation";
-
-const data: Product[] = [
-  ...newArrivalsData,
-  ...topSellingData,
-  ...relatedProductData,
-];
+import { useEffect, useState } from "react";
 
 export default function ProductPage({
   params,
 }: {
   params: { slug: string[] };
 }) {
-  const productData = data.find(
-    (product) => product.id === Number(params.slug[0])
-  );
+  const [productData, setProductData] = useState<Product | null>(null);
+  const [relatedProductData, setRelatedProductData] = useState<Product[]>([]);
 
-  if (!productData?.title) {
-    notFound();
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch('/api/products');
+        if (response.ok) {
+          const data = await response.json();
+          const product = data.products.find(
+            (p: Product) => p.id === Number(params.slug[0])
+          );
+          if (product) {
+            setProductData(product);
+          } else {
+            notFound();
+          }
+          setRelatedProductData(data.products.slice(8, 12));
+        }
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+    };
+
+    fetchProducts();
+  }, [params.slug]);
+
+  if (!productData) {
+    return <div>Loading...</div>;
   }
 
   return (

@@ -47,8 +47,8 @@ export const newArrivalsData: Product[] = [
     id: 3,
     title: "Marble Luxe Roman Wall Clock",
     description: "An elegant Marble Luxe Roman wall clock.",
-    srcUrl: "/images/clock.jpg",
-    gallery: ["/images/IMG-20250916-WA0001.jpg"],
+    srcUrl: "/images/40988d60-b765-4442-a41f-4d831a1f7de6.png",
+    gallery: ["/images/40988d60-b765-4442-a41f-4d831a1f7de6.png"],
     price: 10000,
     discount: {
       amount: 0,
@@ -64,14 +64,14 @@ export const newArrivalsData: Product[] = [
   },
   {
     id: 4,
-    title: "Flower Resine Art",
+    title: "Frosty Flower Keychain ",
     description: "Creative and colorful flower resin art.",
-    srcUrl: "/images/IMG-20250921-WA0019.jpg",
-    gallery: ["/images/IMG-20250921-WA0019.jpg"],
-    price: 160,
+    srcUrl: "/images/IMG-20251008-WA0000.jpg",
+    gallery: ["/images/IMG-20251008-WA0000.jpg"],
+    price: 500,
     discount: {
       amount: 0,
-      percentage: 30,
+      percentage: 15,
     },
     rating: 4.5,
     specifications: [

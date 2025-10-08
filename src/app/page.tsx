@@ -47,7 +47,7 @@ export const newArrivalsData: Product[] = [
     id: 3,
     title: "Marble Luxe Roman Wall Clock",
     description: "An elegant Marble Luxe Roman wall clock.",
-    srcUrl: "/images/IMG-20250916-WA0001.jpg",
+    srcUrl: "/images/clock.jpg",
     gallery: ["/images/IMG-20250916-WA0001.jpg"],
     price: 10000,
     discount: {

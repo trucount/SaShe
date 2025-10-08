@@ -11,7 +11,7 @@ export const newArrivalsData: Product[] = [
     description: "This is a beautiful framed acrylic portrait.",
     srcUrl: "/images/ChatGPT Image Sep 21, 2025, 12_26_28 PM.png",
     gallery: ["/images/ChatGPT Image Sep 21, 2025, 12_26_28 PM.png"],
-    price: 120,
+    price: 4999,
     discount: {
       amount: 0,
       percentage: 0,
@@ -30,10 +30,10 @@ export const newArrivalsData: Product[] = [
     description: "A stunning painting of the Red Bull Racing RB20.",
     srcUrl: "/images/ChatGPT Image Sep 21, 2025, 12_30_32 PM.png",
     gallery: ["/images/ChatGPT Image Sep 21, 2025, 12_30_32 PM.png"],
-    price: 260,
+    price: 8000,
     discount: {
       amount: 0,
-      percentage: 20,
+      percentage: 10,
     },
     rating: 3.5,
     specifications: [
@@ -49,14 +49,14 @@ export const newArrivalsData: Product[] = [
     description: "An elegant Marble Luxe Roman wall clock.",
     srcUrl: "/images/IMG-20250916-WA0001.jpg",
     gallery: ["/images/IMG-20250916-WA0001.jpg"],
-    price: 180,
+    price: 10000,
     discount: {
       amount: 0,
-      percentage: 0,
+      percentage: 10,
     },
     rating: 4.5,
     specifications: [
-      { label: "Material composition", value: "Marble, Metal" },
+      { label: "Material composition", value: "Resine, Metal" },
       { label: "Care instructions", value: "Wipe clean" },
       { label: "Fit type", value: "N/A" },
       { label: "Pattern", value: "Roman Numerals" },

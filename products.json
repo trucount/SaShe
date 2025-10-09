@@ -1,0 +1,398 @@
+[
+  {
+    "id": 1,
+    "title": "Framed Acrylic Portrait",
+    "description": "This is a beautiful framed acrylic portrait.",
+    "srcUrl": "/images/ChatGPT Image Sep 21, 2025, 12_26_28 PM.png",
+    "gallery": [
+      "/images/ChatGPT Image Sep 21, 2025, 12_26_28 PM.png"
+    ],
+    "price": 4999,
+    "discount": {
+      "amount": 0,
+      "percentage": 0
+    },
+    "rating": 4.5,
+    "specifications": [
+      {
+        "label": "Material composition",
+        "value": "100% Acrylic"
+      },
+      {
+        "label": "Care instructions",
+        "value": "Wipe with a soft cloth"
+      },
+      {
+        "label": "Fit type",
+        "value": "N/A"
+      },
+      {
+        "label": "Pattern",
+        "value": "Portrait"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Red Bull Racing RB20 Painting",
+    "description": "A stunning painting of the Red Bull Racing RB20.",
+    "srcUrl": "/images/ChatGPT Image Sep 21, 2025, 12_30_32 PM.png",
+    "gallery": [
+      "/images/ChatGPT Image Sep 21, 2025, 12_30_32 PM.png"
+    ],
+    "price": 8000,
+    "discount": {
+      "amount": 0,
+      "percentage": 10
+    },
+    "rating": 3.5,
+    "specifications": [
+      {
+        "label": "Material composition",
+        "value": "Canvas"
+      },
+      {
+        "label": "Care instructions",
+        "value": "Handle with care"
+      },
+      {
+        "label": "Fit type",
+        "value": "N/A"
+      },
+      {
+        "label": "Pattern",
+        "value": "Racing Car"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Marble Luxe Roman Wall Clock",
+    "description": "An elegant Marble Luxe Roman wall clock.",
+    "srcUrl": "/images/40988d60-b765-4442-a41f-4d831a1f7de6-removebg-preview.png",
+    "gallery": [
+      "/images/40988d60-b765-4442-a41f-4d831a1f7de6-removebg-preview.png"
+    ],
+    "price": 15000,
+    "discount": {
+      "amount": 0,
+      "percentage": 10
+    },
+    "rating": 4.5,
+    "specifications": [
+      {
+        "label": "Material composition",
+        "value": "Resine, Metal"
+      },
+      {
+        "label": "Care instructions",
+        "value": "Wipe clean"
+      },
+      {
+        "label": "Fit type",
+        "value": "N/A"
+      },
+      {
+        "label": "Pattern",
+        "value": "Roman Numerals"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Frosty Flower Keychain ",
+    "description": "Creative and colorful flower resin art.",
+    "srcUrl": "/images/1000040254.png",
+    "gallery": [
+      "/images/1000040254.png"
+    ],
+    "price": 500,
+    "discount": {
+      "amount": 0,
+      "percentage": 15
+    },
+    "rating": 4.5,
+    "specifications": [
+      {
+        "label": "Material composition",
+        "value": "Resin, Dried Flowers"
+      },
+      {
+        "label": "Care instructions",
+        "value": "Keep away from direct sunlight"
+      },
+      {
+        "label": "Fit type",
+        "value": "N/A"
+      },
+      {
+        "label": "Pattern",
+        "value": "Floral"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Alphabels",
+    "description": "Beautiful petals and flowers design.",
+    "srcUrl": "/images/1000039872.jpg",
+    "gallery": [
+      "/images/1000039872.jpg"
+    ],
+    "price": 350,
+    "discount": {
+      "amount": 0,
+      "percentage": 20
+    },
+    "rating": 5,
+    "specifications": [
+      {
+        "label": "Material composition",
+        "value": "100% Cotton"
+      },
+      {
+        "label": "Care instructions",
+        "value": "Machine wash cold"
+      },
+      {
+        "label": "Fit type",
+        "value": "Classic Fit"
+      },
+      {
+        "label": "Pattern",
+        "value": "Floral"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Courage Graphic",
+    "description": "A graphic with a message of courage.",
+    "srcUrl": "/images/1000040293.jpg",
+    "gallery": [
+      "/images/1000040293.jpg"
+    ],
+    "price": 499,
+    "discount": {
+      "amount": 0,
+      "percentage": 0
+    },
+    "rating": 4,
+    "specifications": [
+      {
+        "label": "Material composition",
+        "value": "100% Cotton"
+      },
+      {
+        "label": "Care instructions",
+        "value": "Machine wash warm, tumble dry"
+      },
+      {
+        "label": "Fit type",
+        "value": "Classic Fit"
+      },
+      {
+        "label": "Pattern",
+        "value": "Graphic"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Resine Plate",
+    "description": "A unique and stylish resin plate.",
+    "srcUrl": "/images/1000040275.jpg",
+    "gallery": [
+      "/images/1000040275.jpg"
+    ],
+    "price": 299,
+    "discount": {
+      "amount": 0,
+      "percentage": 0
+    },
+    "rating": 3,
+    "specifications": [
+      {
+        "label": "Material composition",
+        "value": "Resin"
+      },
+      {
+        "label": "Care instructions",
+        "value": "Hand wash only"
+      },
+      {
+        "label": "Fit type",
+        "value": "N/A"
+      },
+      {
+        "label": "Pattern",
+        "value": "Abstract"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Autum Tray",
+    "description": "A golden Tray for a touch of class.",
+    "srcUrl": "/images/1000040296_1.jpg",
+    "gallery": [
+      "/images/1000040296_1.jpg"
+    ],
+    "price": 210,
+    "discount": {
+      "amount": 0,
+      "percentage": 0
+    },
+    "rating": 4.5,
+    "specifications": [
+      {
+        "label": "Material composition",
+        "value": "Metal"
+      },
+      {
+        "label": "Care instructions",
+        "value": "Polish with a soft cloth"
+      },
+      {
+        "label": "Fit type",
+        "value": "N/A"
+      },
+      {
+        "label": "Pattern",
+        "value": "Letter"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Hooks",
+    "description": "A vibrant hook design.",
+    "srcUrl": "/images/1000040308.jpg",
+    "gallery": [
+      "/images/1000040308.jpg"
+    ],
+    "price": 350,
+    "discount": {
+      "amount": 0,
+      "percentage": 20
+    },
+    "rating": 4,
+    "specifications": [
+      {
+        "label": "Material composition",
+        "value": "100% Cotton"
+      },
+      {
+        "label": "Care instructions",
+        "value": "Machine wash warm, tumble dry"
+      },
+      {
+        "label": "Fit type",
+        "value": "Classic Fit"
+      },
+      {
+        "label": "Pattern",
+        "value": "Solid"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Sunny Keychain",
+    "description": "A sunny keychain to brighten your day.",
+    "srcUrl": "/images/1000040311.jpg",
+    "gallery": [
+      "/images/1000040311.jpg"
+    ],
+    "price": 299,
+    "discount": {
+      "amount": 0,
+      "percentage": 0
+    },
+    "rating": 3.5,
+    "specifications": [
+      {
+        "label": "Material composition",
+        "value": "100% Cotton"
+      },
+      {
+        "label": "Care instructions",
+        "value": "Machine wash warm, tumble dry"
+      },
+      {
+        "label": "Fit type",
+        "value": "Classic Fit"
+      },
+      {
+        "label": "Pattern",
+        "value": "Letter"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Resine Clock",
+    "description": "A sparkling resin Clock.",
+    "srcUrl": "/images/1000040350.jpg",
+    "gallery": [
+      "/images/1000040350.jpg"
+    ],
+    "price": 4999,
+    "discount": {
+      "amount": 0,
+      "percentage": 0
+    },
+    "rating": 4.5,
+    "specifications": [
+      {
+        "label": "Material composition",
+        "value": "Resin"
+      },
+      {
+        "label": "Care instructions",
+        "value": "Handle with care"
+      },
+      {
+        "label": "Fit type",
+        "value": "N/A"
+      },
+      {
+        "label": "Pattern",
+        "value": "Diamond"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Resine Bnagles",
+    "description": "Hand-crafted resin bangles.",
+    "srcUrl": "/images/IMG-20250921-WA0008-removebg-preview.png",
+    "gallery": [
+      "/images/IMG-20250921-WA0008-removebg-preview.png"
+    ],
+    "price": 1000,
+    "discount": {
+      "amount": 0,
+      "percentage": 30
+    },
+    "rating": 5,
+    "specifications": [
+      {
+        "label": "Material composition",
+        "value": "Resin"
+      },
+      {
+        "label": "Care instructions",
+        "value": "Avoid contact with harsh chemicals"
+      },
+      {
+        "label": "Fit type",
+        "value": "N/A"
+      },
+      {
+        "label": "Pattern",
+        "value": "Solid"
+      }
+    ]
+  }
+]

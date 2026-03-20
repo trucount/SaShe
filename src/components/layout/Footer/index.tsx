@@ -2,11 +2,9 @@ import { cn } from "@/lib/utils";
 import { satoshi } from "@/styles/fonts";
 import React from "react";
 import { SocialNetworks } from "./footer.types";
-import { FaFacebookF, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 import Link from "next/link";
 import LinksSection from "./LinksSection";
-import Image from "next/image";
-import NewsLetterSection from "./NewsLetterSection";
 import ContactFormSection from "./ContactFormSection";
 import LayoutSpacing from "./LayoutSpacing";
 
@@ -25,11 +23,6 @@ const socialsData: SocialNetworks[] = [
     id: 3,
     icon: <FaInstagram />,
     url: "https://instagram.com",
-  },
-  {
-    id: 4,
-    icon: <FaGithub />,
-    url: "https://github.com/mohammadoftadeh",
   },
 ];
 
@@ -89,11 +82,7 @@ const Footer = () => {
               </Link>
               {" | "}
               Designed by{" "}
-              <span
-                className="text-black font-medium"
-              >
-                Sparrow AI Solutions
-              </span>
+              <span className="text-black font-medium">Sparrow AI Solutions</span>
             </p>
           </div>
         </div>

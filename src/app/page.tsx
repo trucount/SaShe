@@ -4,42 +4,54 @@ import ProductListSec from "@/components/common/ProductListSec";
 import Header from "@/components/homepage/Header";
 import Reviews from "@/components/homepage/Reviews";
 import { Product } from "@/types/product.types";
+import { Review } from "@/types/review.types";
 import { useEffect, useState } from "react";
-import { reviewsData } from "@/lib/reviews";
 
 export default function Home() {
   const [newArrivalsData, setNewArrivalsData] = useState<Product[]>([]);
   const [topSellingData, setTopSellingData] = useState<Product[]>([]);
+  const [reviews, setReviews] = useState<Review[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchProducts = async () => {
+    const fetchHomeData = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch('/api/products');
-        if (response.ok) {
-          const data = await response.json();
-          const products = data.products || [];
-          
-          // Smart arrangement: Sort by rating (descending) and discount (descending)
-          const sortedByRating = [...products].sort((a, b) => {
-            const ratingDiff = (b.rating || 0) - (a.rating || 0);
-            if (ratingDiff !== 0) return ratingDiff;
-            return (b.discount?.percentage || 0) - (a.discount?.percentage || 0);
-          });
+        const [productsResponse, reviewsResponse] = await Promise.all([
+          fetch('/api/products'),
+          fetch('/api/reviews'),
+        ]);
 
-          // Split into new arrivals (top rated) and top selling (highest discount)
+        if (productsResponse.ok) {
+          const productsData = await productsResponse.json();
+          const products = productsData.products || [];
+          const sortedByRating = [...products].sort((a, b) => (b.rating || 0) - (a.rating || 0));
+          const shuffledProducts = [...products];
+
+          for (let index = shuffledProducts.length - 1; index > 0; index -= 1) {
+            const randomIndex = Math.floor(Math.random() * (index + 1));
+            [shuffledProducts[index], shuffledProducts[randomIndex]] = [
+              shuffledProducts[randomIndex],
+              shuffledProducts[index],
+            ];
+          }
+
           setNewArrivalsData(sortedByRating.slice(0, 4));
-          setTopSellingData(sortedByRating.slice(4, 8));
+          setTopSellingData(shuffledProducts.slice(0, 4));
+        }
+
+        if (reviewsResponse.ok) {
+          const reviewsData = await reviewsResponse.json();
+          setReviews(reviewsData.reviews || []);
         }
       } catch (error) {
-        console.error('Error fetching products:', error);
+        console.error('Error fetching homepage data:', error);
       } finally {
         setIsLoading(false);
       }
     };
 
-    fetchProducts();
+    fetchHomeData();
   }, []);
 
   return (
@@ -70,7 +82,7 @@ export default function Home() {
                 viewAllLink="/shop#top-selling"
               />
             </div>
-            <Reviews data={reviewsData} />
+            <Reviews data={reviews} />
           </>
         )}
       </main>

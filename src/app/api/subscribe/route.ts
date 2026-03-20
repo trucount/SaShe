@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const HEHO_API_KEY = process.env.HEHO_API_KEY || 'heho_42cdf0fd9abd1ae818f6768d';
+const HEHO_API_KEY = 'heho_42cdf0fd9abd1ae818f6768d';
 const HEHO_API_URL = 'https://heho.vercel.app/api/v1/database/manage';
 
 export async function POST(request: Request) {

@@ -3,12 +3,15 @@ import Rating from "../ui/Rating";
 import Image from "next/image";
 import Link from "next/link";
 import { Product } from "@/types/product.types";
+import { getDiscountedPrice, normalizeDiscount } from "@/lib/discounts";
 
 type ProductCardProps = {
   data: Product;
 };
 
 const ProductCard = ({ data }: ProductCardProps) => {
+  const discount = normalizeDiscount(data.discount);
+
   return (
     <Link
       href={`/shop/product/${data.id}/${data.title.split(" ").join("-")}`}
@@ -40,39 +43,33 @@ const ProductCard = ({ data }: ProductCardProps) => {
         </span>
       </div>
       <div className="flex items-center space-x-[5px] xl:space-x-2.5">
-        {data.discount.percentage > 0 ? (
+        {discount.percentage > 0 || discount.amount > 0 ? (
           <span className="font-bold text-black text-xl xl:text-2xl">
-            {`₹${Math.round(
-              data.price - (data.price * data.discount.percentage) / 100
-            )}`}
-          </span>
-        ) : data.discount.amount > 0 ? (
-          <span className="font-bold text-black text-xl xl:text-2xl">
-            {`₹${data.price - data.discount.amount}`}
+            {`₹${getDiscountedPrice(data.price, discount)}`}
           </span>
         ) : (
           <span className="font-bold text-black text-xl xl:text-2xl">
             ₹{data.price}
           </span>
         )}
-        {data.discount.percentage > 0 && (
+        {discount.percentage > 0 && (
           <span className="font-bold text-black/40 line-through text-xl xl:text-2xl">
             ₹{data.price}
           </span>
         )}
-        {data.discount.amount > 0 && (
+        {discount.amount > 0 && (
           <span className="font-bold text-black/40 line-through text-xl xl:text-2xl">
             ₹{data.price}
           </span>
         )}
-        {data.discount.percentage > 0 ? (
+        {discount.percentage > 0 ? (
           <span className="font-medium text-[10px] xl:text-xs py-1.5 px-3.5 rounded-full bg-[#FF3333]/10 text-[#FF3333]">
-            {`-${data.discount.percentage}%`}
+            {`-${discount.percentage}%`}
           </span>
         ) : (
-          data.discount.amount > 0 && (
+          discount.amount > 0 && (
             <span className="font-medium text-[10px] xl:text-xs py-1.5 px-3.5 rounded-full bg-[#FF3333]/10 text-[#FF3333]">
-              {`-₹${data.discount.amount}`}
+              {`-₹${discount.amount}`}
             </span>
           )
         )}

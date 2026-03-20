@@ -37,7 +37,7 @@ const Reviews = ({ data = [] }: ReviewsProps) => {
     });
   }, [api, data.length]);
 
-  if (!isClient) return null;
+  if (!isClient || data.length === 0) return null;
 
   return (
     <section className="overflow-hidden">

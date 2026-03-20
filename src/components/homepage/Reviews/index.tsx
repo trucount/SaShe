@@ -8,8 +8,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
@@ -17,9 +15,9 @@ import { useIsClient, useMediaQuery } from "usehooks-ts";
 import ReviewCard from "@/components/common/ReviewCard";
 import { Review } from "@/types/review.types";
 
-type ReviewsProps = { data: Review[] };
+type ReviewsProps = { data?: Review[] };
 
-const Reviews = ({ data }: ReviewsProps) => {
+const Reviews = ({ data = [] }: ReviewsProps) => {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
@@ -27,7 +25,7 @@ const Reviews = ({ data }: ReviewsProps) => {
   const isClient = useIsClient();
 
   React.useEffect(() => {
-    if (!api) {
+    if (!api || data.length === 0) {
       return;
     }
 
@@ -37,9 +35,9 @@ const Reviews = ({ data }: ReviewsProps) => {
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap() + 1);
     });
-  }, [api]);
+  }, [api, data.length]);
 
-  if (!isClient) return null;
+  if (!isClient || data.length === 0) return null;
 
   return (
     <section className="overflow-hidden">
@@ -49,6 +47,43 @@ const Reviews = ({ data }: ReviewsProps) => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
+        <div className="relative flex items-end sm:items-center max-w-frame mx-auto mb-6 md:mb-10 px-4 xl:px-0">
+          <motion.h2
+            initial={{ y: "100px", opacity: 0 }}
+            whileInView={{ y: "0", opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6, duration: 0.6 }}
+            className={cn([
+              integralCF.className,
+              "text-[32px] leading-[36px] md:text-5xl capitalize mr-auto",
+            ])}
+          >
+            OUR HAPPY CUSTOMERS
+          </motion.h2>
+          {data.length > 0 && (
+            <div className="flex items-center space-x-1 ml-2">
+              <button
+                type="button"
+                onClick={() => api?.scrollPrev()}
+                disabled={!api?.canScrollPrev()}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full text-2xl transition disabled:cursor-not-allowed disabled:opacity-40"
+                aria-label="Previous reviews"
+              >
+                <FaArrowLeft />
+              </button>
+              <button
+                type="button"
+                onClick={() => api?.scrollNext()}
+                disabled={!api?.canScrollNext()}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full text-2xl transition disabled:cursor-not-allowed disabled:opacity-40"
+                aria-label="Next reviews"
+              >
+                <FaArrowRight />
+              </button>
+            </div>
+          )}
+        </div>
+
         <Carousel
           setApi={setApi}
           opts={{
@@ -57,28 +92,6 @@ const Reviews = ({ data }: ReviewsProps) => {
           }}
           className="relative w-full mb-6 md:mb-9"
         >
-          <div className="relative flex items-end sm:items-center max-w-frame mx-auto mb-6 md:mb-10 px-4 xl:px-0">
-            <motion.h2
-              initial={{ y: "100px", opacity: 0 }}
-              whileInView={{ y: "0", opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-              className={cn([
-                integralCF.className,
-                "text-[32px] leading-[36px] md:text-5xl capitalize mr-auto",
-              ])}
-            >
-              OUR HAPPY CUSTOMERS
-            </motion.h2>
-            <div className="flex items-center space-x-1 ml-2">
-              <CarouselPrevious variant="ghost" className="text-2xl">
-                <FaArrowLeft />
-              </CarouselPrevious>
-              <CarouselNext variant="ghost" className="text-2xl">
-                <FaArrowRight />
-              </CarouselNext>
-            </div>
-          </div>
           <CarouselContent>
             {data.map((review, index) => (
               <CarouselItem

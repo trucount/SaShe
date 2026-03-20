@@ -19,6 +19,7 @@ export default function CheckoutPage() {
   );
   const [formData, setFormData] = useState({
     fullName: '',
+    email: '',
     phoneNumber: '',
     address: '',
     whatsappNumber: '',
@@ -43,7 +44,11 @@ export default function CheckoutPage() {
     const orderId = Math.random().toString().slice(2, 12);
     const order = {
       orderId,
-      ...formData,
+      fullName: formData.fullName,
+      email: formData.email,
+      phoneNumber: formData.phoneNumber,
+      address: formData.address,
+      whatsappNumber: formData.whatsappNumber,
       products: cart.items,
       totalPrice,
       adjustedTotalPrice,
@@ -102,6 +107,16 @@ export default function CheckoutPage() {
               </InputGroup>
               <InputGroup className="bg-[#F0F0F0]">
                 <InputGroup.Input
+                  type="email"
+                  name="email"
+                  placeholder="Email Address"
+                  className="bg-transparent placeholder:text-black/40"
+                  onChange={handleInputChange}
+                  value={formData.email}
+                />
+              </InputGroup>
+              <InputGroup className="bg-[#F0F0F0]">
+                <InputGroup.Input
                   type="text"
                   name="phoneNumber"
                   placeholder="Phone Number"
@@ -114,7 +129,7 @@ export default function CheckoutPage() {
                 <InputGroup.Input
                   type="text"
                   name="address"
-                  placeholder="Address"
+                  placeholder="Delivery Address"
                   className="bg-transparent placeholder:text-black/40"
                   onChange={handleInputChange}
                   value={formData.address}
@@ -178,8 +193,7 @@ export default function CheckoutPage() {
               {isLoading ? 'Placing Order...' : 'Submit Order'}
             </Button>
             <p className="text-xs text-center text-black/60">
-              Currently we only accept payments after delivery and your customer
-              partner will soon confirm you order
+              Our team will contact you soon to confirm your order
             </p>
           </div>
         </div>

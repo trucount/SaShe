@@ -1,74 +1,49 @@
 import { NextResponse } from "next/server";
 
-const PANTRY_URL = "https://getpantry.cloud/apiv1/pantry/09984b41-cb2b-49c3-8b2e-541dd192796e/basket/emails";
+const HEHO_API_KEY = process.env.HEHO_API_KEY || 'heho_42cdf0fd9abd1ae818f6768d';
+const HEHO_API_URL = 'https://heho.vercel.app/api/v1/database/manage';
 
 export async function POST(request: Request) {
-  const { email } = await request.json();
+  const { email, name, message } = await request.json();
 
   if (!email) {
     return NextResponse.json({ error: "Email is required" }, { status: 400 });
   }
 
   try {
-    // --- 1. Get existing emails ---
-    let emails: string[] = [];
-    const getResponse = await fetch(PANTRY_URL);
+    // Prepare the contact submission data for HeHo
+    const contactData = {
+      name: name || 'Newsletter Subscriber',
+      email,
+      message: message || 'Subscribed to newsletter',
+    };
 
-    if (getResponse.status === 400) {
-      // Basket doesn't exist yet, which is fine. `emails` will remain empty.
-    } else if (getResponse.ok) {
-      // If basket exists, parse its contents, expecting { emails: [...] }
-      const currentData = await getResponse.json();
-      if (currentData && Array.isArray(currentData.emails)) {
-        emails = currentData.emails;
-      }
-    } else {
-      // Handle other potential server errors during the GET request.
-      const errorData = await getResponse.text();
-      return NextResponse.json(
-        { error: "Failed to retrieve subscription list.", details: errorData },
-        { status: getResponse.status }
-      );
-    }
-
-    // --- 2. Add new email if it doesn't exist ---
-    if (emails.includes(email)) {
-      return NextResponse.json(
-        { message: "You are already subscribed!" },
-        { status: 200 }
-      );
-    }
-    emails.push(email);
-
-    // --- 3. Save the updated list back to Pantry using POST ---
-    // The payload MUST be a JSON object, not a raw array.
-    const payload = { emails: emails };
-
-    const postResponse = await fetch(PANTRY_URL, {
-      method: "POST", // POST replaces the entire basket content.
+    // Save contact submission to HeHo
+    const response = await fetch(HEHO_API_URL, {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Authorization': `Bearer ${HEHO_API_KEY}`,
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(payload), // Send the wrapped array.
+      body: JSON.stringify({
+        action: 'add',
+        tableName: 'contact_submissions',
+        data: contactData,
+      }),
     });
 
-    if (postResponse.ok) {
-      return NextResponse.json(
-        { message: "Successfully subscribed!" },
-        { status: 200 }
-      );
-    } else {
-      const errorData = await postResponse.text();
-      // This is the error you were seeing. It should now be resolved.
-      return NextResponse.json(
-        { error: "Failed to save subscription.", details: errorData },
-        { status: postResponse.status }
-      );
+    if (!response.ok) {
+      throw new Error(`HeHo API error: ${response.statusText}`);
     }
-  } catch (error) {
-    console.error(error);
+
     return NextResponse.json(
-      { error: "Internal Server Error" },
+      { message: "Successfully subscribed!" },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error('Error saving contact submission to HeHo:', error);
+    return NextResponse.json(
+      { error: "Failed to save subscription.", details: error instanceof Error ? error.message : 'Unknown error' },
       { status: 500 }
     );
   }

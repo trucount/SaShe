@@ -7,6 +7,7 @@ import Link from "next/link";
 import LinksSection from "./LinksSection";
 import Image from "next/image";
 import NewsLetterSection from "./NewsLetterSection";
+import ContactFormSection from "./ContactFormSection";
 import LayoutSpacing from "./LayoutSpacing";
 
 const socialsData: SocialNetworks[] = [
@@ -38,7 +39,7 @@ const Footer = () => {
       <div className="relative">
         <div className="absolute bottom-0 w-full h-1/2 bg-[#F0F0F0]"></div>
         <div className="px-4">
-          <NewsLetterSection />
+          <ContactFormSection />
         </div>
       </div>
       <div className="pt-8 md:pt-[50px] bg-[#F0F0F0] px-4 pb-4">
@@ -86,7 +87,15 @@ const Footer = () => {
               >
                 Satvik Singh
               </Link>
-              {", "}
+              {" | "}
+              Powered by{" "}
+              <Link
+                href="https://heho.vercel.app"
+                className="text-black font-medium"
+              >
+                Heho
+              </Link>
+              {" | "}
               Designed by{" "}
               <span
                 className="text-black font-medium"

@@ -4,6 +4,7 @@ import { satoshi } from "@/styles/fonts";
 import TopBanner from "@/components/layout/Banner/TopBanner";
 import TopNavbar from "@/components/layout/Navbar/TopNavbar";
 import Footer from "@/components/layout/Footer";
+import ChatbotWidget from "@/components/layout/Chatbot/ChatbotWidget";
 import HolyLoader from "holy-loader";
 import Providers from "./providers";
 
@@ -31,6 +32,7 @@ export default function RootLayout({
           {children}
         </Providers>
         <Footer />
+        <ChatbotWidget />
       </body>
     </html>
   );

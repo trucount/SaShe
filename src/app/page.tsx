@@ -7,17 +7,6 @@ import { Product } from "@/types/product.types";
 import { Review } from "@/types/review.types";
 import { useEffect, useState } from "react";
 
-const getShuffledProducts = (products: Product[]) => {
-  const shuffled = [...products];
-
-  for (let index = shuffled.length - 1; index > 0; index -= 1) {
-    const randomIndex = Math.floor(Math.random() * (index + 1));
-    [shuffled[index], shuffled[randomIndex]] = [shuffled[randomIndex], shuffled[index]];
-  }
-
-  return shuffled;
-};
-
 export default function Home() {
   const [newArrivalsData, setNewArrivalsData] = useState<Product[]>([]);
   const [topSellingData, setTopSellingData] = useState<Product[]>([]);
@@ -84,7 +73,7 @@ export default function Home() {
                 viewAllLink="/shop#top-selling"
               />
             </div>
-            <Reviews data={reviews} />
+            <Reviews />
           </>
         )}
       </main>

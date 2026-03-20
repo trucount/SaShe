@@ -83,6 +83,7 @@ export default function Home() {
               />
             </div>
             <Reviews data={reviews} />
+            <Reviews />
           </>
         )}
       </main>

@@ -5,7 +5,6 @@ import Header from "@/components/homepage/Header";
 import Reviews from "@/components/homepage/Reviews";
 import { Product } from "@/types/product.types";
 import { useEffect, useState } from "react";
-import { reviewsData } from "@/lib/reviews";
 
 export default function Home() {
   const [newArrivalsData, setNewArrivalsData] = useState<Product[]>([]);
@@ -70,7 +69,7 @@ export default function Home() {
                 viewAllLink="/shop#top-selling"
               />
             </div>
-            <Reviews data={reviewsData} />
+            <Reviews />
           </>
         )}
       </main>

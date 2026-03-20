@@ -8,8 +8,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
@@ -64,12 +62,24 @@ const Reviews = ({ data = [] }: ReviewsProps) => {
           </motion.h2>
           {data.length > 0 && (
             <div className="flex items-center space-x-1 ml-2">
-              <CarouselPrevious variant="ghost" className="text-2xl">
+              <button
+                type="button"
+                onClick={() => api?.scrollPrev()}
+                disabled={!api?.canScrollPrev()}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full text-2xl transition disabled:cursor-not-allowed disabled:opacity-40"
+                aria-label="Previous reviews"
+              >
                 <FaArrowLeft />
-              </CarouselPrevious>
-              <CarouselNext variant="ghost" className="text-2xl">
+              </button>
+              <button
+                type="button"
+                onClick={() => api?.scrollNext()}
+                disabled={!api?.canScrollNext()}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full text-2xl transition disabled:cursor-not-allowed disabled:opacity-40"
+                aria-label="Next reviews"
+              >
                 <FaArrowRight />
-              </CarouselNext>
+              </button>
             </div>
           )}
         </div>

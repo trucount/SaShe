@@ -80,15 +80,7 @@ const Footer = () => {
           <hr className="h-[1px] border-t-black/10 mb-6" />
           <div className="text-center">
             <p className="text-sm text-black/60">
-              SaShé © Made by{" "}
-              <Link
-                href="https://www.instagram.com/idk_satvik.s/"
-                className="text-black font-medium"
-              >
-                Satvik Singh
-              </Link>
-              {" | "}
-              Powered by{" "}
+              SaShé © Powered by{" "}
               <Link
                 href="https://heho.vercel.app"
                 className="text-black font-medium"

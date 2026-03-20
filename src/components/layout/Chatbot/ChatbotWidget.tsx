@@ -44,16 +44,13 @@ const ChatbotWidget = () => {
       {isMobile && isOpen && (
         <div className="fixed inset-0 bg-black/50 z-50 md:hidden">
           <div className="fixed bottom-0 left-0 right-0 bg-white rounded-t-2xl max-h-[90vh] overflow-hidden">
-            <div className="flex justify-between items-center p-4 border-b">
-              <h3 className="font-bold text-black">Chat with us</h3>
+            <div className="relative h-[90vh] overflow-auto">
               <button
                 onClick={() => setIsOpen(false)}
-                className="text-gray-500 hover:text-black"
+                className="absolute top-4 right-4 text-gray-500 hover:text-black z-10 bg-white/80 rounded-full w-8 h-8 flex items-center justify-center shadow-sm"
               >
                 ✕
               </button>
-            </div>
-            <div className="h-[calc(90vh-60px)] overflow-auto">
               <iframe
                 src="https://heho.vercel.app/deploy/l6jwvkbfa73fh72o2i7l5"
                 style={{

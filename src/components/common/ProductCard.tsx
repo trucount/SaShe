@@ -12,14 +12,19 @@ type ProductCardProps = {
 const ProductCard = ({ data }: ProductCardProps) => {
   const discount = normalizeDiscount(data.discount);
 
-  // ✅ Safe image handler (supports srcUrl + gallery + fallback)
+  // ✅ Validate URL (external or local)
   const isValid = (url?: string) =>
-    url && (url.startsWith("http") || url.startsWith("/"));
+    typeof url === "string" &&
+    (url.startsWith("http") || url.startsWith("/"));
 
-  const image = isValid(data.srcUrl)
+  // ✅ Safely get first gallery image
+  const firstGalleryImage: string | undefined = data.gallery?.[0];
+
+  // ✅ Final safe image selection
+  const image: string = isValid(data.srcUrl)
     ? data.srcUrl
-    : isValid(data.gallery?.[0])
-    ? data.gallery[0]
+    : isValid(firstGalleryImage)
+    ? firstGalleryImage!
     : "/placeholder.png";
 
   return (

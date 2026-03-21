@@ -12,47 +12,20 @@ type ProductCardProps = {
 const ProductCard = ({ data }: ProductCardProps) => {
   const discount = normalizeDiscount(data.discount);
 
-  // Handle both external URLs and local paths
-  const getImageSrc = (src: string) => {
-    if (!src) return '/images/placeholder.png';
-    // If it's an external URL, return as is
-    if (src.startsWith('http://') || src.startsWith('https://')) {
-      return src;
-    }
-    // If it's a local path, return as is
-    return src;
-  };
-
-  const imageSrc = getImageSrc(data.srcUrl);
-  const isExternalUrl = imageSrc.startsWith('http://') || imageSrc.startsWith('https://');
-
   return (
     <Link
       href={`/shop/product/${data.id}/${data.title.split(" ").join("-")}`}
       className="flex flex-col items-start aspect-auto"
     >
       <div className="bg-[#F0EEED] rounded-[13px] lg:rounded-[20px] w-full lg:max-w-[295px] aspect-square mb-2.5 xl:mb-4 overflow-hidden">
-        {isExternalUrl ? (
-          // For external URLs, use a regular img tag to avoid Next.js Image optimization issues
-          <img
-            src={imageSrc}
-            width={295}
-            height={298}
-            className="rounded-md w-full h-full object-contain hover:scale-110 transition-all duration-500"
-            alt={data.title}
-            loading="lazy"
-          />
-        ) : (
-          // For local images, use Next.js Image component
-          <Image
-            src={imageSrc}
-            width={295}
-            height={298}
-            className="rounded-md w-full h-full object-contain hover:scale-110 transition-all duration-500"
-            alt={data.title}
-            priority
-          />
-        )}
+        <Image
+          src={data.srcUrl}
+          width={295}
+          height={298}
+          className="rounded-md w-full h-full object-contain hover:scale-110 transition-all duration-500"
+          alt={data.title}
+          priority
+        />
       </div>
       <strong className="text-black xl:text-xl">{data.title}</strong>
       <div className="flex items-end mb-1 xl:mb-2">

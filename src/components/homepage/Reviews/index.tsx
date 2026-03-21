@@ -84,59 +84,65 @@ const Reviews = ({ data = [] }: ReviewsProps) => {
           )}
         </div>
 
-        <Carousel
-          setApi={setApi}
-          opts={{
-            align: "center",
-            loop: true,
-          }}
-          className="relative w-full mb-6 md:mb-9"
-        >
-          <CarouselContent>
-            {data.map((review, index) => (
-              <CarouselItem
-                key={review.id}
-                className="w-full max-w-[358px] sm:max-w-[400px] pl-5"
-              >
-                <ReviewCard
-                  className="h-full"
-                  data={review}
-                  blurChild={
-                    data.length >= 6 && (
-                      <div
-                        className={cn([
-                          isDesktop
-                            ? (current + 1 === count
-                                ? 0
-                                : current + 1 > count
-                                ? 1
-                                : current + 1) === index &&
-                              "backdrop-blur-[2px]"
-                            : (current === count ? 0 : current) === index &&
-                              "backdrop-blur-[2px]",
-                          isDesktop
-                            ? (current === 1
-                                ? count - 2
-                                : current === 2
-                                ? count - 1
-                                : current - 3) === index &&
-                              "backdrop-blur-[2px]"
-                            : (current === 1
-                                ? count - 1
-                                : current === 2
-                                ? 0
-                                : current - 2) === index &&
-                              "backdrop-blur-[2px]",
-                          "absolute bg-white/10 right-0 top-0 h-full w-full z-10",
-                        ])}
-                      />
-                    )
-                  }
-                />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
+        {data.length === 0 ? (
+          <div className="max-w-frame mx-auto px-4 xl:px-0 pb-4 text-left text-black/60">
+            Customer reviews will appear here once they are available.
+          </div>
+        ) : (
+          <Carousel
+            setApi={setApi}
+            opts={{
+              align: "center",
+              loop: true,
+            }}
+            className="relative w-full mb-6 md:mb-9"
+          >
+            <CarouselContent>
+              {data.map((review, index) => (
+                <CarouselItem
+                  key={review.id}
+                  className="w-full max-w-[358px] sm:max-w-[400px] pl-5"
+                >
+                  <ReviewCard
+                    className="h-full"
+                    data={review}
+                    blurChild={
+                      data.length >= 6 && (
+                        <div
+                          className={cn([
+                            isDesktop
+                              ? (current + 1 === count
+                                  ? 0
+                                  : current + 1 > count
+                                  ? 1
+                                  : current + 1) === index &&
+                                "backdrop-blur-[2px]"
+                              : (current === count ? 0 : current) === index &&
+                                "backdrop-blur-[2px]",
+                            isDesktop
+                              ? (current === 1
+                                  ? count - 2
+                                  : current === 2
+                                  ? count - 1
+                                  : current - 3) === index &&
+                                "backdrop-blur-[2px]"
+                              : (current === 1
+                                  ? count - 1
+                                  : current === 2
+                                  ? 0
+                                  : current - 2) === index &&
+                                "backdrop-blur-[2px]",
+                            "absolute bg-white/10 right-0 top-0 h-full w-full z-10",
+                          ])}
+                        />
+                      )
+                    }
+                  />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+        )}
       </motion.div>
     </section>
   );

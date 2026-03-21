@@ -82,7 +82,8 @@ export default function Home() {
                 viewAllLink="/shop#top-selling"
               />
             </div>
-            {reviews.length > 0 && <Reviews data={reviews} />}
+            <Reviews data={reviews} />
+            <Reviews />
           </>
         )}
       </main>

@@ -18,7 +18,7 @@ const parseString = (value: unknown): string =>
 
 const normalizeReview = (review: Record<string, unknown>, index: number): Review => ({
   id: parseNumber(review.id) || index + 1,
-  user: parseString(review.user ?? review.user_name ?? review.name ?? review.customer_name) || 'Anonymous',
+  user: parseString(review.user ?? review.name ?? review.customer_name) || 'Anonymous',
   content: parseString(review.content ?? review.review ?? review.message),
   rating: parseNumber(review.rating),
   date: parseString(review.date ?? review.created_at ?? review.createdAt),

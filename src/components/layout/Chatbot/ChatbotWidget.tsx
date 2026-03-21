@@ -45,10 +45,9 @@ const ChatbotWidget = () => {
         <div className="fixed inset-0 bg-black/50 z-50 md:hidden">
           <div className="fixed bottom-0 left-0 right-0 bg-white rounded-t-2xl max-h-[90vh] overflow-hidden">
             <div className="flex justify-between items-center p-4 border-b">
-              <h3 className="font-bold text-black">Chat with us</h3>
               <button
                 onClick={() => setIsOpen(false)}
-                className="text-gray-500 hover:text-black"
+                className="text-gray-500 hover:text-black ml-auto"
               >
                 ✕
               </button>

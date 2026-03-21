@@ -23,22 +23,43 @@ const ProductCard = ({ data }: ProductCardProps) => {
   const dispatch = useAppDispatch();
   const discount = normalizeDiscount(data.discount);
 
+  // ✅ Safe URL validator
+  const isValid = (url?: string) =>
+    typeof url === "string" &&
+    (url.startsWith("http") || url.startsWith("/"));
+
+  // ✅ Safe gallery access (if exists in CartItem)
+  const firstGalleryImage: string | undefined =
+    (data as any).gallery?.[0];
+
+  // ✅ Final image selection
+  const image: string = isValid(data.srcUrl)
+    ? data.srcUrl
+    : isValid(firstGalleryImage)
+    ? firstGalleryImage!
+    : "/placeholder.png";
+
   return (
     <div className="flex items-start space-x-4">
+      {/* Image */}
       <Link
         href={`/shop/product/${data.id}/${data.name.split(" ").join("-")}`}
         className="bg-[#F0EEED] rounded-lg w-full min-w-[100px] max-w-[100px] sm:max-w-[124px] aspect-square overflow-hidden"
       >
         <Image
-          src={data.srcUrl}
+          src={image}
           width={124}
           height={124}
           className="rounded-md w-full h-full object-cover hover:scale-110 transition-all duration-500"
           alt={data.name}
           priority
+          unoptimized
         />
       </Link>
+
+      {/* Content */}
       <div className="flex w-full self-stretch flex-col">
+        {/* Title + Delete */}
         <div className="flex items-center justify-between">
           <Link
             href={`/shop/product/${data.id}/${data.name.split(" ").join("-")}`}
@@ -63,39 +84,40 @@ const ProductCard = ({ data }: ProductCardProps) => {
             <PiTrashFill className="text-xl md:text-2xl text-red-600" />
           </Button>
         </div>
+
+        {/* Attributes */}
         <div className="-mt-1">
           <span className="text-black text-xs md:text-sm mr-1">Size:</span>
           <span className="text-black/60 text-xs md:text-sm">
-            {data.attributes[0]}
+            {data.attributes?.[0] || "-"}
           </span>
         </div>
+
         <div className="mb-auto -mt-1.5">
           <span className="text-black text-xs md:text-sm mr-1">Color:</span>
           <span className="text-black/60 text-xs md:text-sm">
-            {data.attributes[1]}
+            {data.attributes?.[1] || "-"}
           </span>
         </div>
+
+        {/* Price + Counter */}
         <div className="flex items-center flex-wrap justify-between">
           <div className="flex items-center space-x-[5px] xl:space-x-2.5">
-            {discount.percentage > 0 || discount.amount > 0 ? (
-              <span className="font-bold text-black text-xl xl:text-2xl">
-                {`₹${getDiscountedPrice(data.price, discount)}`}
-              </span>
-            ) : (
-              <span className="font-bold text-black text-xl xl:text-2xl">
-                ₹{data.price}
-              </span>
-            )}
-            {discount.percentage > 0 && (
+            {/* Final Price */}
+            <span className="font-bold text-black text-xl xl:text-2xl">
+              {discount.percentage > 0 || discount.amount > 0
+                ? `₹${getDiscountedPrice(data.price, discount)}`
+                : `₹${data.price}`}
+            </span>
+
+            {/* Original Price (fixed duplicate bug) */}
+            {(discount.percentage > 0 || discount.amount > 0) && (
               <span className="font-bold text-black/40 line-through text-xl xl:text-2xl">
                 ₹{data.price}
               </span>
             )}
-            {discount.amount > 0 && (
-              <span className="font-bold text-black/40 line-through text-xl xl:text-2xl">
-                ₹{data.price}
-              </span>
-            )}
+
+            {/* Discount Badge */}
             {discount.percentage > 0 ? (
               <span className="font-medium text-[10px] xl:text-xs py-1.5 px-3.5 rounded-full bg-[#FF3333]/10 text-[#FF3333]">
                 {`-${discount.percentage}%`}
@@ -108,6 +130,8 @@ const ProductCard = ({ data }: ProductCardProps) => {
               )
             )}
           </div>
+
+          {/* Quantity */}
           <CartCounter
             initialValue={data.quantity}
             onAdd={() => dispatch(addToCart({ ...data, quantity: 1 }))}
@@ -121,7 +145,10 @@ const ProductCard = ({ data }: ProductCardProps) => {
                     })
                   )
                 : dispatch(
-                    removeCartItem({ id: data.id, attributes: data.attributes })
+                    removeCartItem({
+                      id: data.id,
+                      attributes: data.attributes,
+                    })
                   )
             }
             isZeroDelete

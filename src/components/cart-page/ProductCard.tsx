@@ -23,20 +23,36 @@ const ProductCard = ({ data }: ProductCardProps) => {
   const dispatch = useAppDispatch();
   const discount = normalizeDiscount(data.discount);
 
+  // Helper to check if URL is external
+  const isExternalUrl = (url: string) => {
+    return url.startsWith('http://') || url.startsWith('https://');
+  };
+
   return (
     <div className="flex items-start space-x-4">
       <Link
         href={`/shop/product/${data.id}/${data.name.split(" ").join("-")}`}
         className="bg-[#F0EEED] rounded-lg w-full min-w-[100px] max-w-[100px] sm:max-w-[124px] aspect-square overflow-hidden"
       >
-        <Image
-          src={data.srcUrl}
-          width={124}
-          height={124}
-          className="rounded-md w-full h-full object-cover hover:scale-110 transition-all duration-500"
-          alt={data.name}
-          priority
-        />
+        {isExternalUrl(data.srcUrl) ? (
+          <img
+            src={data.srcUrl}
+            width={124}
+            height={124}
+            className="rounded-md w-full h-full object-cover hover:scale-110 transition-all duration-500"
+            alt={data.name}
+            loading="lazy"
+          />
+        ) : (
+          <Image
+            src={data.srcUrl}
+            width={124}
+            height={124}
+            className="rounded-md w-full h-full object-cover hover:scale-110 transition-all duration-500"
+            alt={data.name}
+            priority
+          />
+        )}
       </Link>
       <div className="flex w-full self-stretch flex-col">
         <div className="flex items-center justify-between">

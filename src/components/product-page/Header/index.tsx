@@ -5,8 +5,11 @@ import { integralCF } from "@/styles/fonts";
 import { cn } from "@/lib/utils";
 import Rating from "@/components/ui/Rating";
 import AddToCardSection from "./AddToCardSection";
+import { getDiscountedPrice, normalizeDiscount } from "@/lib/discounts";
 
 const Header = ({ data }: { data: Product }) => {
+  const discount = normalizeDiscount(data.discount);
+
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -37,39 +40,33 @@ const Header = ({ data }: { data: Product }) => {
             </span>
           </div>
           <div className="flex items-center space-x-2.5 sm:space-x-3 mb-5">
-            {data.discount.percentage > 0 ? (
+            {discount.percentage > 0 || discount.amount > 0 ? (
               <span className="font-bold text-black text-2xl sm:text-[32px]">
-                {`₹${Math.round(
-                  data.price - (data.price * data.discount.percentage) / 100
-                )}`}
-              </span>
-            ) : data.discount.amount > 0 ? (
-              <span className="font-bold text-black text-2xl sm:text-[32px]">
-                {`₹${data.price - data.discount.amount}`}
+                {`₹${getDiscountedPrice(data.price, discount)}`}
               </span>
             ) : (
               <span className="font-bold text-black text-2xl sm:text-[32px]">
                 ₹{data.price}
               </span>
             )}
-            {data.discount.percentage > 0 && (
+            {discount.percentage > 0 && (
               <span className="font-bold text-black/40 line-through text-2xl sm:text-[32px]">
                 ₹{data.price}
               </span>
             )}
-            {data.discount.amount > 0 && (
+            {discount.amount > 0 && (
               <span className="font-bold text-black/40 line-through text-2xl sm:text-[32px]">
                 ₹{data.price}
               </span>
             )}
-            {data.discount.percentage > 0 ? (
+            {discount.percentage > 0 ? (
               <span className="font-medium text-[10px] sm:text-xs py-1.5 px-3.5 rounded-full bg-[#FF3333]/10 text-[#FF3333]">
-                {`-${data.discount.percentage}%`}
+                {`-${discount.percentage}%`}
               </span>
             ) : (
-              data.discount.amount > 0 && (
+              discount.amount > 0 && (
                 <span className="font-medium text-[10px] sm:text-xs py-1.5 px-3.5 rounded-full bg-[#FF3333]/10 text-[#FF3333]">
-                  {`-₹${data.discount.amount}`}
+                  {`-₹${discount.amount}`}
                 </span>
               )
             )}

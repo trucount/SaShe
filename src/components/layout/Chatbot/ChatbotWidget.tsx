@@ -9,9 +9,10 @@ const ChatbotWidget = () => {
 
   return (
     <>
+      {/* Floating Button */}
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className="fixed bottom-6 right-6 bg-black text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:bg-gray-800 transition-all z-40"
+        className="fixed bottom-6 right-6 bg-black text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:bg-gray-800 transition-all z-50"
         aria-label={isOpen ? 'Close chatbot' : 'Open chatbot'}
       >
         {isOpen ? (
@@ -36,29 +37,42 @@ const ChatbotWidget = () => {
 
       {isOpen && (
         <>
-          <div className="fixed inset-0 bg-black/50 z-40 md:hidden" onClick={() => setIsOpen(false)} />
+          {/* Overlay (mobile only) */}
+          <div
+            className="fixed inset-0 bg-black/50 z-40 md:hidden"
+            onClick={() => setIsOpen(false)}
+          />
 
-          <div className="fixed bottom-24 right-6 left-6 md:left-auto md:w-[380px] z-50 bg-white rounded-2xl overflow-hidden shadow-2xl border border-black/10">
-            <div className="relative h-[70vh] max-h-[700px] md:h-[600px]">
-              <button
-                onClick={() => setIsOpen(false)}
-                className="absolute top-4 right-4 text-gray-500 hover:text-black z-10 bg-white/80 rounded-full w-8 h-8 flex items-center justify-center shadow-sm"
-                aria-label="Close chatbot"
-              >
-                ✕
-              </button>
-              <iframe
-                src={CHATBOT_URL}
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  border: 'none',
-                  borderRadius: '16px',
-                }}
-                allow="microphone; camera"
-                title="HeHo Chatbot"
-              />
-            </div>
+          {/* Chat Container */}
+          <div
+            className="
+              fixed z-50 bg-white shadow-2xl border border-black/10 overflow-hidden
+
+              /* 📱 MOBILE: full screen with small top gap */
+              top-4 left-0 right-0 bottom-0 rounded-t-2xl
+
+              /* 🖥️ DESKTOP: right side panel */
+              md:top-0 md:right-0 md:left-auto md:bottom-0
+              md:w-[420px] md:rounded-none md:rounded-l-2xl
+            "
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-black z-10 bg-white/80 rounded-full w-8 h-8 flex items-center justify-center shadow-sm"
+              aria-label="Close chatbot"
+            >
+              ✕
+            </button>
+
+            {/* Iframe */}
+            <iframe
+              src={CHATBOT_URL}
+              className="w-full h-full"
+              style={{ border: 'none' }}
+              allow="microphone; camera"
+              title="HeHo Chatbot"
+            />
           </div>
         </>
       )}
